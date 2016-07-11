@@ -1,0 +1,12 @@
+<template name="CallCab">
+	<div class="screen">
+		<h4>Request a taxi</h4>
+		<form name="form_call_cab" method="post">
+			<input type="text" name="from" id="auto_from" placeholder="Where are you now?" required />
+			<input type="text" name="to" id="auto_to" placeholder="Where are your going?" required/>
+			<input type="submit" value="Request Cab" class="btn" />
+		</form>
+	</div>
+</template>
+
+<!-- TODO add a redirect to myrequests if a request is active. -->

@@ -1,0 +1,42 @@
+<template name="Master">
+<header>
+<div class="navbar-fixed">
+<nav class="top-nav">
+	<div class="container">
+	<div class="nav-wrapper">
+		<a href="#" class="brand-logo">Elite Taxi Services</a>
+		
+		<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-bars"></i></a>
+
+		<ul class="side-nav" id="mobile-nav">
+	    {{#if currentUser}}
+		<!--mobile-->
+			<li><a href="/profile/{{currentUser._id}}" class="profile-edit-link">
+				<i class="fa fa-user"></i>&nbsp;{{screenName}}</a>
+			</li>
+			<li><a href="#" class="logout-link"><i class="fa fa-sign-out"></i>&nbsp;Logout</a></li>
+		{{/if}}
+        </ul>
+        
+		<ul class="right hide-on-med-and-down">
+		 {{#if currentUser}}
+		<!-- web -->
+			<li><a href="/profile/{{currentUser._id}}" class="profile-edit-link">
+				<i class="fa fa-user"></i>&nbsp;{{screenName}}</a>
+			</li>
+			<li><a href="#" class="logout-link"><i class="fa fa-sign-out"></i>&nbsp;Logout</a></li>
+			{{/if}}
+		</ul>
+		
+	</div>
+	</div>
+</nav>
+</div>
+</header>
+	<div class="container">
+		<div class="">
+			{{> sAlert}}
+			{{> yield}}
+		</div>
+	</div>
+</template>

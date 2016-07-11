@@ -1,0 +1,34 @@
+<template name="RequestDetail">
+		{{#each request_details}}
+		<li class="collection-item">
+		{{#if eta}}
+			<span class="title tr-main-title">Passenger: {{first_name}}&nbsp;|&nbsp;{{from}}&nbsp;<b>to</b>&nbsp;{{to}}</span>
+						<div class="tr-sub-content">
+							Request made: {{timeAgo createdAt}} ago | ETA: {{eta}} Minutes<br />
+						</div>
+					
+					<div>	
+		Pick Up in Progress.. | <a href="/message/{{requested_by}}/{{_id}}"><i class="fa fa-comment"></i>&nbsp;Messenger({{unreadMessages _id}})
+						</a>
+					</div>	
+
+		{{else}}
+			{{#if onJob}}
+			
+						<span class="title tr-main-title">Passenger: {{first_name}}&nbsp;|&nbsp;{{from}}&nbsp;<b>to</b>&nbsp;{{to}}</span>
+						<div class="tr-sub-content">
+							Request made: {{timeAgo createdAt}} ago | ETA: {{eta}} Minutes<br />
+						</div>
+
+			{{else}}
+			<a id="accept_job" href="#">
+						<span class="title tr-main-title">Passenger: {{first_name}}&nbsp;|&nbsp;{{from}}&nbsp;<b>to</b>&nbsp;{{to}}</span>
+						<div class="tr-sub-content">
+							Request made: {{timeAgo createdAt}} ago | ETA: {{eta}} Minutes<br />
+						</div>
+			</a>
+			{{/if}}
+		{{/if}}				
+		</li>		
+		{{/each}}	
+</template>

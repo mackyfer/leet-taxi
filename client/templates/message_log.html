@@ -1,0 +1,15 @@
+<template name="MessageLog">
+		<div class="msg-pass" id="msgs_passenger_out">
+			<ul class="chat-log">
+				{{#each chat_details}}
+					
+					<li  class="{{chatClass from}}">
+						
+						<div class="chat-to"><b>{{userNameFromId from}}:</b></div>
+						<div class="chat-to-msg">{{message}}</div>
+						
+					</li>
+				{{/each}}
+			</ul>		
+	</div>
+</template>

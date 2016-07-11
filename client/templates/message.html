@@ -1,0 +1,22 @@
+
+<template name="Message">
+	<div class="back-button">
+		<a href="/" class="back-button"><i class="fa fa-arrow-left" tooltip="Go back"></i></a>
+	</div>
+	<div class="messages-passenger">
+		<div class="teal messenger-header">
+
+				<h5 class="white-text"><i class="fa fa-comment"></i>&nbsp;Chat</h5>
+			
+		</div>
+		<div class="messages-passenger-inner">
+			{{> MessageLog}}
+			<div class="input-group">
+				<input type="hidden" id="mydriver" value="{{chat_to}}" />
+				<input type="hidden" id="request_id" value="{{request_id}}" />
+				<input type="text" placeholder="Type your message here...." id="msg_pass_input"/>
+				<button id="send_msg_to_driver" class="btn inline">Send&nbsp;<i class="fa fa-send"></i></button>
+			</div>
+		</div>
+	</div>
+</template>

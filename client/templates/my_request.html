@@ -1,0 +1,41 @@
+<template name="MyRequest">
+	<div> 
+		{{> MyRequestDetail}}
+	</div>
+</template>
+<template name="MyRequestDetail">
+		{{#each request_details}}
+			
+				<ul class="collection with-header">
+					<li class="collection-header teal">
+							<h5 class="white-text"><i class="fa fa-taxi left"></i>Current Request</h5>
+					</li>
+					<li class="collection-item valign-wrapper">
+						<i class="fa fa-map-marker left special-icon-mod"></i>
+						<span class="valign">{{from}}</span>
+					</li>
+					<li class="collection-item">
+						<i class="fa fa-flag left special-icon-mod" ></i>
+						<span class="valign">{{to}}</span></li>
+					<li class="collection-item">
+						<i class="fa fa-clock-o left special-icon-mod"></i>
+						<span class="valign">
+							{{#if eta}}
+								{{eta}} Minutes
+							{{else}} 
+								Finding you a driver...
+							{{/if}}
+						</span></li>
+					
+						
+						{{#if driver}}
+							<li class="collection-item valign-wrapper">Your Cab driver is: {{chatToUserName driver}} | <a href="/message/{{chatToUserId driver}}/{{_id}}" id="contact_driver">&nbsp;<i class="fa fa-comment"></i>&nbsp;Messenger({{unreadMessages _id}})</a></li>
+						{{/if}}
+				</ul>
+				{{#if driver}}
+					<button class="btn" id="complete_request">Ride Completed</button>
+				{{/if}}
+				<button class="btn" id="cancel_request">Cancel Request</button>
+		{{/each}}
+		
+</template>
