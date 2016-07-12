@@ -11,14 +11,14 @@ ServiceConfiguration.configurations.remove({
 
 ServiceConfiguration.configurations.upsert(
   { service: "google" },
-  { $set: { clientId: "894664398562-iqsf424chsve4bf717nm087er0dfcuen.apps.googleusercontent.com",
-   secret: "Pn7K_-vWXCqJXap5nag8V354" } 
+  { $set: { clientId: "",
+   secret: "" } 
  }
 );
 ServiceConfiguration.configurations.upsert(
   { service: "facebook" },
-  { $set: { appId: "1529271974063364",
-   secret: "9f9c8251ff0ea46db272e80035d8c9cb" } 
+  { $set: { appId: "",
+   secret: "" } 
  }
 );
 
